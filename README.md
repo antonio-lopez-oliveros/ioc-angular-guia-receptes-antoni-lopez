@@ -1,59 +1,38 @@
-# IocAngularGuiaReceptesAntoniLopez
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.0.
+# Nom de l'aplicació
 
-## Development server
+Guia Receptes
 
-To start a local development server, run:
+## Autor/a
 
-```bash
-ng serve
-```
+Antoni López Oliveros
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Descripció
 
-## Code scaffolding
+Aplicació creada per Antoni López per al mòdul DA2_OA01. En aquest projecte es treballarà amb Angular i es crearà una aplicació web que permeti gestionar una guia de receptes de cuina.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Versions utilitzades
 
-```bash
-ng generate component component-name
-```
+Framework: Angular 22
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Node: 24.21.0
 
-```bash
-ng generate --help
-```
+npm: 11.19.0
 
-## Building
+IDE: VS Code 1.139.1
 
-To build the project run:
+Git: 2.53
 
-```bash
-ng build
-```
+## Com crear i executar el projecte
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Per crear el projecte s'ha de posar al terminal: ng new ioc-angular-guia-receptes-antoni-lopez --routing --style=scss --ssr=false --standalone=true --file-name-style-guide=2016 --skip-git=true --package-manager=npm
 
-## Running unit tests
+Per executar el projecte s'ha de posar al terminal: ng serve -o
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Estat del projecte
 
-```bash
-ng test
-```
+Projecte base llest
 
-## Running end-to-end tests
+## Enllaç del repositori
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+https://github.com/antonio-lopez-oliveros/ioc-angular-guia-receptes-antoni-lopez
