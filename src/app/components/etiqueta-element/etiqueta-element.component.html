@@ -1,0 +1,9 @@
+<!--class.etiqueta-destacada opcional si es cumpleix condició-->
+<span class="etiqueta" [class.etiqueta-destacada]="destacat">
+    {{categoria}}
+    <!-- si es destacat apareix-->
+		@if (destacat){
+			*
+			<span class="visually-hidden">Element destacat</span>
+		}
+</span>

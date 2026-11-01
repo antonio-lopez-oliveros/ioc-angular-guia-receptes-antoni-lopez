@@ -1,0 +1,26 @@
+
+<!--class.seleccionada es classe opcional en cas es cumpleixi condicio-->
+<article class="targeta" [class.seleccionada]="seleccionada">
+    <header class="targeta-capcelera">
+        <!-- amb ?? si es undefined li asigno un valor-->
+        <app-etiqueta-element [categoria]="element.categoria" [destacat]="element.destacat ?? false"></app-etiqueta-element>
+            <!--amb time indico hi ha una data dintre-->
+            <time [attr.datetime]="element.dataActualitzacio">
+                <!--utilitzo pipe per formatejar dataActualitzacio-->
+                {{ element.dataActualitzacio | date: 'dd/MM/yyyy' }}
+            </time>
+    </header>
+
+    <h3> {{ element.nom }} </h3>
+    <p> {{ element.descripcio}} </p>
+    <p> {{element.calories}} calories</p>
+
+    <p class="valoracio">
+        ⭐️
+        {{ element.valoracio }}/5
+    </p>
+
+    <!--button permet sel·leccionar element i llençar event a traves del metode avisaSeleccio-->
+    <button type="button" (click)="avisaSeleccio()">Veure detall</button>
+
+</article>

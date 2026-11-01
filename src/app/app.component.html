@@ -1,23 +1,71 @@
+<a href="#contingut-principal" class="skip-link">Saltar al contingut principal</a>
 
-<main class="app-shell">
-  <section class="intro">
-    <h1>{{ nomAplicacio }}</h1>
-    <p>Aplicació creada per Antoni López per al mòdul DA2_OA01. En aquest projecte es treballarà amb Angular i es crearà una aplicació web que permeti gestionar una guia de receptes de cuina.</p>
-  </section>
+<header class="capcalera">
+  <h1>Catàleg d'Elements</h1>
+  <p>Unitat 2 - Components i interfície</p>
+</header>
 
-  <section class="project-card">
-    <h2>Dades del projecte</h2>
-    <p>Estat: Projecte base llest</p>
-    <p>Framework: Angular 22</p>
-    <p>Node: 24.21.0</p>
-    <p>npm: 11.19.0</p>
-    <p>IDE: VS Code 1.139.1</p>
-    <p>Git: 2.53</p>
+<main id="contingut-principal" class="contenidor">
+  <nav class="foltres-zona" aria-label="Filtres del catàleg">
+    <app-barra-filtres class="filtres-zona" (filtresCanviats)="actualitzaFiltres($event)" />
+  </nav>
 
-  </section>
+  @if (carregant()) {
+    <section class="estat-carregant" aria-live="polite" aria-busy="true">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Carregant elements ...</p>
+    </section>
+  } @else {
+    <section class="resultats" aria-label="Resultats">
+      <h2>
+        Elements
+        <span class="comptador" aria-live="polite">
+          {{ elementsFiltrats.length }} de {{ elements.length }}
+        </span>
+      </h2>
 
-  <aside class="note">
-    <p>Nota: aquest projecte anirà evolucionant durant el mòdul.</p>
+      @if (filtresActuals.text || filtresActuals.categoria !== 'Totes') {
+        <p class="info-filtres">
+          Filtres actius:
+          @if (filtresActuals.text) {
+            text «{{ filtresActuals.text }}»
+          }
+          @if (filtresActuals.categoria !== 'Totes') {
+            categoria {{ filtresActuals.categoria }}
+          }
+        </p>
+      }
+
+      @if (elementsFiltrats.length > 0) {
+        <app-llista-elements
+          [elements]="elementsFiltrats"
+          [elementSeleccionatId]="elementSeleccionat?.id"
+          (selecciona)="seleccionaElement($event)"
+        />
+      } @else {
+        <div class="sense-resultats" role="status">
+          Cerca
+          <p>No s'ha trobat cap element amb aquests filtres.</p>
+          <p>Proveu un altre text o trieu la categoria «Totes».</p>
+        </div>
+      }
+    </section>
+  }
+
+  <aside class="detall" aria-live="polite" aria-label="Detall de l'element">
+    <h2>Detall</h2>
+    @if (elementSeleccionat) {
+      <h3>{{ elementSeleccionat.nom }}</h3>
+      <p>{{ elementSeleccionat.descripcio }}</p>
+      <ul>
+        <li><strong>Categoria:</strong> {{ elementSeleccionat.categoria }}</li>
+        <li><strong>Calories:</strong> {{ elementSeleccionat.calories }}</li>
+        <li><strong>Valoració:</strong> {{ elementSeleccionat.valoracio }}/5</li>
+      </ul>
+      <button type="button" (click)="tancaDetall()">Tanca el detall</button>
+    } @else {
+      <p>Seleccioneu un element per veure'n el detall.</p>
+    }
   </aside>
 </main>
 

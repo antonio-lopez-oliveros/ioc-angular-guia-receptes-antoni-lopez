@@ -1,0 +1,26 @@
+
+.etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: #6cf2aa;
+  color: #0a7546;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.etiqueta-destacada {
+  background: #f6ec95;
+  color: #e65100;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

@@ -1,24 +1,92 @@
-.app-shell {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 48rem;
-  margin: 2rem auto;
-  font-family: system-ui, sans-serif;
+.capcalera {
+  text-align: center;
+  padding: 1.5rem 1rem;
+
+  h1 {
+    margin: 0 0 0.25rem;
+    color: #1976d2;
+  }
+
+  p {
+    margin: 0;
+    color: #666;
+  }
 }
 
-h1 {
-  color: #1976d2;
+.contenidor {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
 }
 
-.project-card {
+.detall {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
   padding: 1rem;
-  border: 1px solid #b7c7d9;
-  border-radius: 0.5rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #effee7;
+
+
+  button {
+    margin-top: 0.5rem;
+  }
 }
 
-.note {
-  padding: 1rem;
-  background: #eef5ff;
-  border-left: 4px solid #1976d2;
+@media (max-width: 900px) {
+  .contenidor {
+    grid-template-columns: 1fr;
+  }
+
+  .detall {
+    position: static;
+  }
+}
+
+.filtres-zona {
+  grid-column: 1 / -1;
+}
+
+.comptador {
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: #e3f2fd;
+  color: #0d47a1;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.info-filtres {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.sense-resultats,
+.estat-carregant {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #666;
+
+  i {
+    font-size: 2rem;
+  }
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 1rem;
+  border: 4px solid #e0e0e0;
+  border-top-color: #1976d2;
+  border-radius: 50%;
+  animation: gir 0.8s linear infinite;
+}
+
+@keyframes gir {
+  to { transform: rotate(360deg); }
 }

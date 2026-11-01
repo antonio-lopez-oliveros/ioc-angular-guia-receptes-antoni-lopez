@@ -1,0 +1,12 @@
+
+<!--section de la llista d'elements-->
+<section class="graella" aria-label="Llistat d'elements">
+	<!--bucle for recorre llista d'elements-->
+	@for (element of elements; track element.id){
+		<!--en cada iteració mostra una targeta de l'element de la llista-->
+		<!--si la llista esta buida mostra missatge opcionala amb @empty-->
+		<app-targeta-element [element]="element" [seleccionada]="element.id == elementSeleccionatId" (selecciona)="propagaSeleccio($event)"></app-targeta-element>
+	} @empty {
+		<p class="missatge-buit" role="status">No hi ha elements per mostrar</p>
+	}
+</section>
